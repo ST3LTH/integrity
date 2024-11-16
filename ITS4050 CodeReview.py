@@ -7,7 +7,7 @@ USERS = {
 }
 @app.route('/')
 def home():
-    return “Welcome to the vulnerable app! Go to /login to login!”
+    return "Welcome to the vulnerable app! Go to /login?username=USERNAME&password=PASSWORD to login!"
 @app.route('/login')
 def login():
     username = request.args.get('username')
