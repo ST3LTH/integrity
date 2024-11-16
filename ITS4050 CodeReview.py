@@ -3,7 +3,7 @@ app = Flask(__name__)
 # Dummy database of users
 USERS = {
     'admin': 'adminpassword',
-    ‘user’: ‘userpassword’
+    'user': 'userpassword'
 }
 @app.route('/')
 def home():
