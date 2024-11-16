@@ -16,7 +16,7 @@ def login():
     query = f"SELECT * FROM users WHERE username = '{username}' AND password = '{password}'"
     response = "Login failed!"
     if username in USERS and USERS[username] == password:
-    response = f"Successfully logged in as {username}!"
+        response = f"Successfully logged in as {username}!"
         # Simulating the execution of a SQL query and returning the result
     return render_template_string('<h2>' + response + '</h2><br>Executed query: ' + query)
 if __name__ == '__main__':
