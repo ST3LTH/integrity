@@ -25,5 +25,5 @@ def login():
     return render_template_string('<h2>' + response + '</h2><br>Executed query: ' + query)
 if __name__ == '__main__':
 
-    
+
     app.run(debug=True)
