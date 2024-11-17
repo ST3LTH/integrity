@@ -14,10 +14,15 @@ def home():
 
 
 def login():
-    username = request.args.get('username')
-    password = request.args.get('password')
+    username = request.args.get('username', '')
+    password = request.args.get('password', '')
+
+    username_extract = username.replace("'", "''")
+    password_extract = password.replace("'", "''")
+    
     # Vulnerable SQL query simulation
-    query = f"SELECT * FROM users WHERE username = '{username}' AND password = '{password}'"
+    query = f"SELECT * FROM users WHERE username = '{username_extract}' AND password = '{password_extract}'"
+    
     response = "Login failed!"
     if username in USERS and USERS[username] == password:
         response = f"Successfully logged in as {username}!"
